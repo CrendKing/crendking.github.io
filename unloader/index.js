@@ -6,6 +6,11 @@ window.addEventListener('load', ev => {
     document.body.addEventListener('dblclick', () => {
         location = urlParams.get('location');
     });
+    document.body.addEventListener('keypress', (event) => {
+        if (event.key === ' ' || event.key === 'Enter') {
+            location = urlParams.get('location');
+        }
+    });
     document.getElementById('location').value = urlParams.get('location');
 });
 
