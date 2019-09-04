@@ -10,17 +10,16 @@ window.addEventListener('load', ev => {
         document.title = ''
     }
 
-    document.querySelector('link[rel *= "icon"]').href = urlParams.get('favicon')
+    document.getElementById('title').textContent = title
+    document.getElementById('location').textContent = urlParams.get('location')
+
+    document.querySelector('link[rel = "icon"]').href = urlParams.get('favicon')
     document.body.addEventListener('dblclick', () => {
-        location = urlParams.get('location')
+        window.location = urlParams.get('location')
     })
     document.body.addEventListener('keypress', (event) => {
         if (event.key === ' ' || event.key === 'Enter') {
-            location = urlParams.get('location')
+            window.location = urlParams.get('location')
         }
     })
-
-    document.getElementById('title').value = title
-    document.getElementById('location').value = urlParams.get('location')
 });
-
