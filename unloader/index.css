@@ -11,13 +11,13 @@ body {
     top: 15%;
 }
 
-#headline {
+#title {
     font-size: 3em;
     padding-bottom: 1.25em;
     user-select: none;
 }
 
-.infobox {
+#location {
     font-size: 1.5em;
     padding-top: 0.75em;
     padding-bottom: 0.75em;
