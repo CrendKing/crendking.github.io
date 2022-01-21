@@ -6,21 +6,24 @@ body {
 }
 
 #container {
+    font-size: 25px;
     text-align: center;
     position: relative;
     top: 15%;
+    line-height: 2.5em;
+}
+
+#state {
+    display: inline-block;
+    color: gold;
+    font-size: 36px;
 }
 
 #title {
-    font-size: 3em;
-    padding-bottom: 1.25em;
+    font-size: 36px;
     user-select: none;
 }
 
 #location {
-    font-size: 1.5em;
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
     text-overflow: ellipsis;
 }
-
