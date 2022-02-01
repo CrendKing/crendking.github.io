@@ -2,20 +2,15 @@ window.addEventListener('load', ev => {
     const urlParams = new URLSearchParams(window.location.search)
 
     const originalLocation = urlParams.get('location')
-    const restore = () => {
+    const unload = () => {
         document.getElementById('state').textContent = 'Loading ...'
         window.location = originalLocation
     }
 
-    let restoreTime = urlParams.get('restoreTime')
-    if (restoreTime !== null) {
-        if (restoreTime <= 0) {
-            restoreTime = Date.now() - restoreTime
-        }
-
-        if (Date.now() >= restoreTime) {
-            restore()
-        }
+    if (location.hash === '#once') {
+        location.hash = 'unload'
+    } else if (location.hash === '#unload') {
+        unload()
     }
 
     let title
@@ -31,10 +26,10 @@ window.addEventListener('load', ev => {
     document.getElementById('location').textContent = originalLocation
 
     document.querySelector('link[rel = "icon"]').href = urlParams.get('favicon')
-    document.body.addEventListener('dblclick', restore)
+    document.body.addEventListener('dblclick', unload)
     document.body.addEventListener('keypress', (event) => {
         if (event.key === ' ' || event.key === 'Enter') {
-            restore()
+            unload()
         }
     })
 });
