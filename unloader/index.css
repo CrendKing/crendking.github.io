@@ -16,6 +16,8 @@ body {
 #state {
     color: gold;
     font-size: 36px;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
 #title {
@@ -24,5 +26,6 @@ body {
 }
 
 #location {
+    overflow: hidden;
     text-overflow: ellipsis;
 }

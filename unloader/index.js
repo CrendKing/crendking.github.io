@@ -3,7 +3,7 @@ window.addEventListener('load', ev => {
 
     const originalLocation = urlParams.get('location')
     const unload = () => {
-        document.getElementById('state').textContent = 'Loading ...'
+        document.getElementById('state').style.opacity = 1
         window.location = originalLocation
     }
 
