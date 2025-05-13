@@ -3,7 +3,7 @@ window.addEventListener('load', ev => {
 
     const originalLocation = urlParams.get('location')
     const unload = () => {
-        document.getElementById('state').style.opacity = 1
+        document.querySelector('.state').style.opacity = 1
         window.location = originalLocation
     }
 
@@ -22,8 +22,8 @@ window.addEventListener('load', ev => {
         document.title = ''
     }
 
-    document.getElementById('title').textContent = title
-    document.getElementById('location').textContent = originalLocation
+    document.querySelector('.title').textContent = title
+    document.querySelector('.location').textContent = originalLocation
 
     document.querySelector('link[rel = "icon"]').href = urlParams.get('favicon')
     document.body.addEventListener('dblclick', unload)
